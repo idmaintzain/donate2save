@@ -1,21 +1,6 @@
-.sign-in {
-  width: 30vw;
-  display: flex;
-  flex-direction: column;
-}
-.title{
-  margin: 25px 0;
-  color: dodgerblue;
-}
+
 .footer{
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
-.sign-in-image{
-  position: relative;
-  margin: 25px 0;
-}
-.img-fluid{
-  margin: 25px 0;
-  border-radius: 4px;
-}
+

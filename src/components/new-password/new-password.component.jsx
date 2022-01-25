@@ -8,10 +8,10 @@ import {Link} from 'react-router-dom'
 import { Fragment, useState } from 'react';
 import FormInput from '../form-input/form-input.component';
 import useStyles from '../card-styling/card-styling';
-import './sign-in.styles.css'
+import './new-password.styles.css'
 
-const SignInPage = () => {
-  const [ formDetails, setFormDetails ] = useState(['email', 'password']);
+const NewPassword = () => {
+  const [ formDetails, setFormDetails ] = useState(['password', 'confirmPassword']);
   const classes = useStyles();
   const theme = useTheme();
   const handleSubmit = ( event ) => {
@@ -32,10 +32,10 @@ const SignInPage = () => {
               <div className={classes.details}>
                 <CardContent className={classes.content}>
                   <Typography component="h5" variant="h5">
-                  Hi, You are welcome
+                  New Password
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                  Provide the credintials neeeded to access the admin page
+                  Provide new and confirm the new Password
                   </Typography>
                 </CardContent>
                 <div>
@@ -43,7 +43,7 @@ const SignInPage = () => {
                   <div>
                   {formDetails.map((val,ind)=>(
                     <div key={ind}>
-                      <FormInput placeHolder={val} handleOnchange={handleChange} name={val}/>
+                      <FormInput placeHolder={val} onChange={handleChange} name={val}/>
                     </div>
                   ))}
                 </div>
@@ -51,9 +51,9 @@ const SignInPage = () => {
                 </div>
                 <div className="footer pb-5">
                   <p>
-                    <Link to='/reset' className={classes.linkTag}>Forgot Password?</Link>
+                    <Link to='/signin' className={classes.linkTag}>Back to Login?</Link>
                   </p>
-                  <CustomButton >Login</CustomButton>
+                  <CustomButton >Save</CustomButton>
                 </div>
               </div>
               <CardMedia
@@ -68,4 +68,4 @@ const SignInPage = () => {
       </Fragment>
   )
 }
-export default SignInPage
+export default NewPassword

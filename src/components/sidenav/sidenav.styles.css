@@ -1,0 +1,14 @@
+.sidenav{
+  width: 9vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  /* height: 100vh; */
+}
+span:hover{
+  background-color: rgb(213, 227, 253);
+  border-left: 2px solid blue;
+  padding: 0 20px;
+  width: 80%;
+  
+}

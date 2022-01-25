@@ -1,48 +1,72 @@
-import './reset-password.styles.css'
-import { Component } from 'react'
+import { useTheme } from '@material-ui/core/styles';
+import useStyles from '../card-styling/card-styling';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import CustomButton from "../custom-button/custom-button.component";
+import {Link} from 'react-router-dom'
+import { Fragment, useState } from 'react';
 import FormInput from '../form-input/form-input.component';
-import CustomButton from '../custom-button/custom-button.component';
+import './reset-password.styles.css'
 
-class ResetPassword extends Component {
-  constructor(){
-    super();
-
-    this.state = {
-      resetPass: ''
-    }
-  }
-  handleSubmit( event){
+const ResetPassword = ( ) => {
+  const [ formDetails, setFormDetails ] = useState(['email']);
+  const classes = useStyles();
+  const theme = useTheme();
+  const handleSubmit = ( event ) => {
     event.preventDefault();
-    this.setState({resetPass: ''})
+    setFormDetails(['',''])
   }
-  handleChange( event ){
-    const {name, value} = event.target;
-    this.setState({[name]: value})
+  const handleChange = ( event ) => {
+    event.preventDefault();
+    const {name, value } = event.target;
+    setFormDetails({[name]:value});
   }
-  render() {
-    return (
-     <div className="container">
-       <div className="row">
-         <div className="col-md-5 col-lg-5 col-xl-5 reset-pass">
-           <h3 className='title'>Reset Password</h3>
-           <p className='title-text'>Kindly provide your Email</p>
-         <div className=''>
-          <form onSubmit={this.handleSubmit}>
-           <FormInput  placeHolder={'Email'} name={'resetPassword'} onChange={this.handleChange}/>
-            <div className="footer">
-              <p>Back to Login?</p>
-              <CustomButton>Reset</CustomButton>
-            </div>
-          </form>
-         </div>
-         </div>
-         <div className="col-md-7 col-lg-7 col-xl-7">
-           <img src="../../images/melanie-lim-nD3wunG16Fo-unsplash.jpg" className='img-fluid' alt="" srcSet="" />
-         </div>
-       </div>
-     </div>
-    )
-  }
-}
 
+  return (
+    <Fragment>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-md-8 col-lg-8 col-xl-8 pt-4 ">
+          <Card className={classes.root}>
+              <div className={classes.details}>
+                <CardContent className={classes.content}>
+                  <Typography component="h5" variant="h5">
+                    Reset Password
+                  </Typography>
+                  <Typography variant="subtitle1" color="textSecondary">
+                     Kindly provide your Email
+                  </Typography>
+                </CardContent>
+                <div>
+                  <form onSubmit={handleSubmit}>
+                  <div>
+                    {formDetails.map((val,ind)=>(
+                      <div key={ind}>
+                        <FormInput placeHolder={val} onChange={handleChange}/>
+                      </div>
+                    ))}
+                  </div>
+                  </form>
+                </div>
+                <div className="footer pb-5">
+                  <p>
+                    <Link to='/reset-password' className={classes.linkTag}>Back to Login?</Link>
+                  </p>
+                  <CustomButton >Reset</CustomButton>
+                </div>
+              </div>
+              <CardMedia
+                className={classes.cover}
+                image="../../images/melanie-lim-nD3wunG16Fo-unsplash.jpg"
+                title="Live from space album cover"
+              />
+            </Card>
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  )
+}
 export default ResetPassword;

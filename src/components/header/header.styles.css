@@ -1,0 +1,26 @@
+.header{
+  width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.logo-container {
+  height: 100%;
+  width: 70px;
+  padding: 25px;
+}
+.options {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+li{
+  text-decoration-style: none;
+  list-style-type: none;
+}
+li,.option {
+  padding: 25px 15px;
+}
