@@ -4,6 +4,7 @@ import CustomButton from '../custom-button/custom-button.component';
 // import PrimarySearchAppBar from '../header/header.component';
 import { Outlet } from 'react-router-dom';
 import SimpleCard from './dash-card.component';
+import CustomizedTables from '../table/table.component';
 
 class Dashboard extends Component {
   constructor(){
@@ -21,8 +22,8 @@ class Dashboard extends Component {
   render () {
     return (
       <Fragment>
-        <div className='pt-4'></div>
-        <div className="container=fluid pt-4">
+       
+        <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
              {/* <PrimarySearchAppBar/> */}
@@ -51,6 +52,11 @@ class Dashboard extends Component {
                   ))
                 }
             </div>
+           <div className="row">
+           <div className="col-12 pt-4">
+              <CustomizedTables/>
+            </div>
+           </div>
           </div>
         </div>
       

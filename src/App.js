@@ -6,6 +6,9 @@ import ResetPassword from './components/reset-password/reset-password.component'
 import Dashboard from './components/dashboard/dashboard.component';
 import NewPassword from './components/new-password/new-password.component';
 import Navbar from './components/header/header.component';
+import UserPermission from './components/user-permission/user-permission.component';
+import Admin from './components/admin/admin.component';
+import Patient from './components/patient/patient.component';
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
        <Route  path='/reset' element={<ResetPassword/>}/>
        <Route  path='/user/*' element={<Navbar/>}>
         <Route path='dashboard' element={<Dashboard/>}/>
+        <Route path='user-permission' element={<UserPermission/>}/>
+        <Route path='admin' element={<Admin/>}/>
+        <Route path='patients' element={<Patient/>}/>
        </Route>
        <Route  path='/reset-password' element={<NewPassword/>}/>
      </Routes>

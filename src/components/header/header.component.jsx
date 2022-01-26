@@ -40,15 +40,14 @@ export default function Navbar() {
     if (items === "Dashboard") {
       navigate('/user/dashboard')
     }else if (items === "user Permission") {
-      navigate('/user/signin')
-    }
-    else if (items === "user Permission") {
-      
+      navigate('/user/user-permission')
     }
     else if (items === "Admin") {
+      navigate('/user/admin')
       
     }
     else if (items === "Patients") {
+      navigate('/user/patients')
       
     }
     else if (items === "Donation") {

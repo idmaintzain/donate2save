@@ -6,8 +6,9 @@ import TextField from '@material-ui/core/TextField';
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
-      margin: theme.spacing(1.5),
+      margin: theme.spacing(1),
       width: '38ch',
+      // height: 30
     },
   },
 }));
@@ -23,6 +24,7 @@ const FormInput = ({handleOnchange, placeHolder, otherProps }) => {
               onChange={handleOnchange}
                placeholder={placeHolder}
               variant="outlined"
+              name={otherProps}
              
               />
     </div>

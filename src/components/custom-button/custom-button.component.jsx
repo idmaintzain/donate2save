@@ -1,8 +1,8 @@
 import './custom-button.styles.css';
-const CustomButton = ({children, ...otherProps}) => {
+const CustomButton = ({children, handleOnClick}) => {
   return(
     <div>
-      <button className="custom-button"> 
+      <button className="custom-button" onClick={handleOnClick}> 
         {children}
         
         </button>
